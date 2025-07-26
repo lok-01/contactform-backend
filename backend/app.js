@@ -8,7 +8,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' ,'https://contactform-frontend.vercel.app/'}));
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://contactform-frontend.vercel.app']
+}));
+
 app.use(express.json());
 
 app.use('/api/forms', formRoutes);
